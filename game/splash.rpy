@@ -1,8 +1,8 @@
-label language_chooser: 
-    scene black 
-    menu: 
+label language_chooser:
+    scene black
+    menu:
         "English":
-            $ renpy.change_language(None) 
+            $ renpy.change_language(None)
         "ภาษาไทย":
             $ renpy.change_language("thai")
         "Polski":
@@ -11,6 +11,8 @@ label language_chooser:
             $ renpy.change_language("indo")
         "{font=Mali.ttf}{size=48} {/size}{/font}{font=Neucha.ttf}{size=30}Русский{/size}{/font}":
             $ renpy.change_language("russian")
+        "Română":
+            $ renpy.change_language("romanian")
     $ renpy.utter_restart() #alternatively, use "return" if you don't want to go to the main menu.
 
 label splashscreen:
@@ -82,7 +84,7 @@ label splashscreen:
     #        linear 60 alpha 0.5
     #    pause
     #    $ renpy.quit()
-    
+
 
     if not persistent.chose_lang:
         $ persistent.chose_lang = True
@@ -92,16 +94,16 @@ label splashscreen:
     $ renpy.pause(2)
 
     hide text with dissolve
-    
+
     $ renpy.pause(2)
-    
+
     show text (_("{color=#ffffff}Aoba Suzukaze Presents\na story and art by: Aoffy{/color}")) with dissolve ## fix
     $ renpy.pause(2)
-    
+
     with dissolve
     with Pause(1.0)
 
     hide text
     with dissolve
-   
+
     return
